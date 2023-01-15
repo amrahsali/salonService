@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:scaleType="centerCrop"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WelcomeActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/spa" />
+
+        <TextView
+            android:gravity="center"
+            android:padding="30dp"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/pink"
+            android:text="Welcome to multi salon  system"/>
+
+
+    </RelativeLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:padding="10dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp">
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+          <ImageView
+              android:layout_width="150dp"
+              android:layout_height="120dp"
+              android:scaleType="centerCrop"
+              android:src="@drawable/baber2" />
+          <TextView
+              android:gravity="bottom"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:paddingStart="15dp"
+              android:paddingTop="5dp"
+              android:text="book for services"
+              android:textColor="@color/black"
+              android:textSize="16dp"
+              android:textStyle="bold" />
+      </RelativeLayout>
+
+
+        <Space
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/makeup" />
+            <TextView
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:text="provide services"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"/>
+        <Button
+            android:onClick="To_register"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Register"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
