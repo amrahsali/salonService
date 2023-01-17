@@ -61,6 +61,7 @@
                 android:orientation="horizontal"
                 android:background="@drawable/boarder_bg">
                 <EditText
+                    android:id="@+id/email"
                     android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -85,6 +86,7 @@
                 android:orientation="horizontal"
                 android:background="@drawable/boarder_bg">
                 <EditText
+                    android:id="@+id/password"
                     android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -92,7 +94,7 @@
                     android:background="@null"
                     android:drawableStart="@drawable/ic_round_security_24"
                     android:drawablePadding="10dp"
-                    android:hint="*******"/>
+                    android:hint="Enter password"/>
 
             </LinearLayout>
             <Space
@@ -132,7 +134,7 @@
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="Sign up"/>
+                    android:text="CREATE"/>
 
 
 
@@ -142,5 +144,13 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_back"
+        android:visibility="gone" />
 
 </FrameLayout>
