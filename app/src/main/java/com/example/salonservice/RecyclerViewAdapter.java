@@ -1,9 +1,12 @@
 package com.example.salonservice;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,12 +18,15 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
-    private final Context context;
-    private final ArrayList<barberModel> courseModelArrayList;
+    // creating variables for our list, context, interface and position.
+    private ArrayList<barberModel> courseRVModalArrayList;
+    private Context context;
+    private ViewHolder.CourseClickInterface courseClickInterface;
+    int lastPos = -1;
 
     public RecyclerViewAdapter(Context context, ArrayList<barberModel> courseModelArrayList) {
+        this.courseRVModalArrayList = courseRVModalArrayList;
         this.context = context;
-        this.courseModelArrayList = courseModelArrayList;
     }
     @NonNull
     @Override
@@ -31,11 +37,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        barberModel model = courseModelArrayList.get(position);
-        holder.courseNameTV.setText(model.getShopname());
-        holder.courseRatingTV.setText("" + model.getView());
+        // setting data to our recycler view item on below line.
+        barberModel courseRVModal = courseRVModalArrayList.get(holder.getAdapterPosition());
+        holder.shop_name.setText(courseRVModal.getShopname());
+        holder.view.setText(courseRVModal.getView());
+        // adding animation to recycler view item on below line.
+        setAnimation(holder.itemView, holder.getAdapterPosition());
 
 
+    }
+    private void setAnimation(View itemView, int position) {
+        if (position > lastPos) {
+            // on below line we are setting animation.
+            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+            itemView.setAnimation(animation);
+            lastPos = position;
+        }
     }
 
 
@@ -45,13 +62,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return courseModelArrayList.size();
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView courseNameTV;
-        private final TextView courseRatingTV;
+        private TextView shop_name, view;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            courseNameTV = itemView.findViewById(R.id.shop_name);
-            courseRatingTV = itemView.findViewById(R.id.view_btn);
+            shop_name = itemView.findViewById(R.id.shop_name);
+            view = itemView.findViewById(R.id.view_btn);
         }
+
+        // creating a interface for on click
+        public interface CourseClickInterface {
+            void onCourseClick(int position);
     }
 }

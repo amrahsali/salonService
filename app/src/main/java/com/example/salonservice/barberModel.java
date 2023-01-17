@@ -9,8 +9,6 @@ public class barberModel {
         this.shopname = shopname;
         this.View = view;
     }
-
-    barberModel(){}
     public String getShopname() {
         return shopname;
     }
