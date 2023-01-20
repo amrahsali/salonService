@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     // creating variables for our list, context, interface and position.
     private ArrayList<barberModel> courseRVModalArrayList;
@@ -28,6 +28,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.courseRVModalArrayList = courseRVModalArrayList;
         this.context = context;
     }
+
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,6 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     }
+
     private void setAnimation(View itemView, int position) {
         if (position > lastPos) {
             // on below line we are setting animation.
@@ -59,8 +61,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         // this method is used for showing number of card items in recycler view
-        return courseModelArrayList.size();
+        return courseRVModalArrayList.size();
     }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView shop_name, view;
 
@@ -73,5 +76,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // creating a interface for on click
         public interface CourseClickInterface {
             void onCourseClick(int position);
+        }
     }
 }
