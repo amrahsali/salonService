@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
-    RecyclerViewAdapter adapter;
     Button button;
 
     @Override

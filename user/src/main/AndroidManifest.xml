@@ -9,12 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SalonService">
         <activity
-
-
+            android:name=".Add_services_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -34,11 +37,9 @@
                 android:value="" />
         </activity>
         <activity
-
             android:name=".SplashscreenActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

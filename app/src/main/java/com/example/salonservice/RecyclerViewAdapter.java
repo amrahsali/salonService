@@ -25,7 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     int lastPos = -1;
 
     public RecyclerViewAdapter(Context context, ArrayList<barberModel> courseModelArrayList) {
-        this.courseRVModalArrayList = courseRVModalArrayList;
+        this.courseRVModalArrayList = courseModelArrayList;
         this.context = context;
     }
 
