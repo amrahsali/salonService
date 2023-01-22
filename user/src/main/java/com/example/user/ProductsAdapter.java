@@ -38,7 +38,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // inflating our layout file on below line.
-        View view = LayoutInflater.from(context).inflate(R.layout.user_product_cardview, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.services_cardview, parent, false);
         return new ViewHolder(view);
     }
 
@@ -79,6 +79,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
     @Override
     public int getItemCount() {
+        courseRVModalArrayList = new ArrayList<>();
+
         return courseRVModalArrayList.size();
     }
 
@@ -91,11 +93,10 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing all our variables on below line.
-            product_name = itemView.findViewById(R.id.product_name);
-            product_image = itemView.findViewById(R.id.product_image);
-            Product_description = itemView.findViewById(R.id.product_description);
-            Product_price = itemView.findViewById(R.id.product_price);
-            add_to_cart = itemView.findViewById(R.id.cart_add);
+            product_name = itemView.findViewById(R.id.service_name);
+            product_image = itemView.findViewById(R.id.service_image);
+            Product_description = itemView.findViewById(R.id.service_description);
+            Product_price = itemView.findViewById(R.id.service_price);
         }
     }
 
