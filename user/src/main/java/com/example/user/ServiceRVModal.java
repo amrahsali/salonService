@@ -9,15 +9,15 @@ public class ServiceRVModal implements Parcelable {
     private String productDescription;
     private String productPrice;
     private String productImg;
-    private String productId;
+    private String serviceId;
 
 
     public String getServiceId() {
-        return productId;
+        return serviceId;
     }
 
     public void setServiceId(String productId) {
-        this.productId = productId;
+        this.serviceId = productId;
     }
 
 
@@ -28,7 +28,7 @@ public class ServiceRVModal implements Parcelable {
 
     protected ServiceRVModal(Parcel in) {
         productName = in.readString();
-        productId = in.readString();
+        serviceId = in.readString();
         productDescription = in.readString();
         productPrice = in.readString();
         productImg = in.readString();
@@ -81,7 +81,7 @@ public class ServiceRVModal implements Parcelable {
 
     public ServiceRVModal(String productId, String productName, String productDescription, String productPrice, String productImg) {
         this.productName = productName;
-        this.productId = productId;
+        this.serviceId = productId;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
         this.productImg = productImg;
@@ -95,7 +95,7 @@ public class ServiceRVModal implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(productName);
-        dest.writeString(productId);
+        dest.writeString(serviceId );
         dest.writeString(productDescription);
         dest.writeString(productPrice);
         dest.writeString(productImg);
